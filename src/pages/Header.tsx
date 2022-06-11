@@ -12,6 +12,9 @@ const ButtonNav = styled(Link)`
   color: white;
   margin-right: 30px;
   text-decoration: none;
+  :hover {
+    background-color: grey;
+  }
 `;
 
 export default function Header() {
@@ -21,7 +24,7 @@ export default function Header() {
         <Toolbar>
           <ButtonNav to="/">Home</ButtonNav>
           <ButtonNav to="/characters">Characters</ButtonNav>
-          <ButtonNav to="/location">Locations</ButtonNav>
+          <ButtonNav to="/locations">Locations</ButtonNav>
           <ButtonNav to="/episodes">Episodes</ButtonNav>
         </Toolbar>
       </MenuBar>

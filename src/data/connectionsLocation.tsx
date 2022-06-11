@@ -1,11 +1,18 @@
-const URL_LOCATION = "https://rickandmortyapi.com/api/location";
+import { apiLocations } from "./configs";
+import { ILocation, ILocations } from "./dataTypes";
 
-//typo de retorno para listagem das locations
-export default interface ILocations {
-  id: number;
-  name: string;
-  type: string;
-  dimension: string;
+//Return list Locations
+export async function getLocations(): Promise<ILocations> {
+  const { data } = await apiLocations.get("/location");
+  return data;
 }
 
+//Return location
+export async function getLocation(id: number): Promise<ILocation> {
+  return await apiLocations.get(`"/location/${id}"`);
+}
 
+//Return Next and Prev pages
+export async function toggleLocations(page: number): Promise<ILocations> {
+  return await apiLocations.get(`/location?page=${page}`);
+}

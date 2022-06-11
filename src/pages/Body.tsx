@@ -1,7 +1,7 @@
 import Home from "./Home";
 import Characters from "./Characters";
 import Episodes from "./Episodes";
-import Location from "./Location";
+import Locations from "./Locations";
 import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
@@ -23,8 +23,8 @@ export default function Body() {
         <Route path="/characters">
           <Characters />
         </Route>
-        <Route path="/location">
-          <Location />
+        <Route path="/locations">
+          <Locations />
         </Route>
         <Route path="/episodes">
           <Episodes />
