@@ -5,17 +5,23 @@ import Locations from "./Locations";
 import { Redirect, Route, Switch } from "react-router-dom";
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
+import { useState } from "react";
+import { IInfo } from "../data/dataTypes";
+import PaginationItems from "./PaginationItems";
 
 const BodyBox = styled(Box)`
-  margin-top: 100px;
+  margin-top: 75px;
   margin-left: 30px;
   margin-right: 30px;
-  background: #8b8b8b;
+  background-color: rgb(31, 30, 30);
 `
 
 export default function Body() {
+  const [infoResults, setInfoResults] = useState<IInfo | null>(null);
+
   return (
     <BodyBox>
+      <PaginationItems infoResults={infoResults}/>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -24,7 +30,7 @@ export default function Body() {
           <Characters />
         </Route>
         <Route path="/locations">
-          <Locations />
+          <Locations setInfoResults={setInfoResults} />
         </Route>
         <Route path="/episodes">
           <Episodes />
