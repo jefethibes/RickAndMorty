@@ -81,7 +81,7 @@ export default function Locations(props: ILocationsProps) {
       props.setInfoResults(info);
     }
     getDataLocations();
-  }, [props]);
+  }, [props.setInfoResults]);
 
   return (
     <Grid container>

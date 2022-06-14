@@ -24,7 +24,7 @@ export default function Header() {
         <Toolbar>
           <ButtonNav to="/">Home</ButtonNav>
           <ButtonNav to="/characters">Characters</ButtonNav>
-          <ButtonNav to="/locations">Locations</ButtonNav>
+          <ButtonNav to="/locations?page=1">Locations</ButtonNav>
           <ButtonNav to="/episodes">Episodes</ButtonNav>
         </Toolbar>
       </MenuBar>
